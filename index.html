@@ -114,7 +114,43 @@
   </div>
 
   <script>
+function checkBlanks() {
+    const answers = {
+      blank1: ["12", "twelve"],
+      blank2: ["letters", "characters"],
+      blank3: ["numbers", "digits"],
+      blank4: ["common passwords", "easy passwords", "weak passwords"],
+      wifi1: ["password", "security", "encryption"],
+      wifi2:["stations", "airports", "train stations", "libraries", "public spaces"],
+      pw1:["password"],
+      pw2:["strong", "secure", "safe"],
+      phish1:["urgent", "now", "immediately"],
+      phish2: ["suspend", "account", "warning"],
+      pw3:["name", "birthday", "username"],
+      pw4:["birthday", "phone", "student id", "address"],
+      phish3:["hover", "mouse", "place", "pause"],
+      phish4:["official", "legitimate", "real", "bank"]
+      
+      };
 
+    const feedback = [];
+
+    for (let key in answers) {
+      const userInput = document.getElementById(key).value.trim().toLowerCase();
+      const isCorrect = answers[key].some(valid => userInput === valid);
+
+      if (isCorrect) {
+        feedback.push(`<p style="color: green;">✅ ${key}: Correct!</p>`);
+      } else if (userInput === "") {
+        feedback.push(`<p style="color: orange;">⚠️ ${key}: No answer entered.</p>`);
+      } else {
+        feedback.push(`<p style="color: red;">❌ ${key}: "${userInput}" is not quite right.</p>`);
+      }
+    }
+
+    document.getElementById("feedback").innerHTML = feedback.join("");
+  }
+</script>
 </body>
 </html>
 
