@@ -1,0 +1,76 @@
+body {
+  font-family: system-ui;
+  background: #87d6c9;
+  color: white;
+  text-align: center;
+}
+
+.lesson-wrapper {
+  height: 500px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.modules {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 150px;
+  padding: 40px;
+  background: #87d6c9;
+}
+
+.module {
+  width: 200px;
+  text-align: center;
+}
+
+.module-icon {
+  position: relative;
+}
+
+module-icon:active {
+   box-shadow: 0 7px #1a7940
+}
+
+.module-icon img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+.module-icon p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+  pointer-events: none;
+}
+
+.personas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 150px;
+  padding: 40px;
+  background: #87d6c9;
+}
+
+section {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
+.fill {
+  color: #1a4e8a
+}
+
