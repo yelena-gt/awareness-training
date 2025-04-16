@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Frontpage</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1>Security Awareness Training</h1>
+<h3> Learn the scary and exciting facts about cybersecurity and stay safe from most common digital threats people face. </h3>
+
+<body>
+    <div class="lesson-wrapper">
+      <div class="container">
+        <div class="heading">
+          <h1> Modules</h1>
+        </div>
+        <div class="modules">
+  <div class="module">
+    <a href="phishing.html" class="module">
+    <div class="module-icon">
+      <img src="https://prog-8.com/images/html/advanced/html.png" />
+      <p>Phishing</p>
+    </div>
+    </a>
+    <p class="txt-content"> One of the most common types of cyberattacks you will encounter in your life. Learn about phishing attacks, and prepare to protect your information!</p>
+  </div>
+
+  <div class="module">
+    <a href="phishing.html" class="module">
+    <div class="module-icon">
+      <img src="https://prog-8.com/images/html/advanced/jQuery.png"/>
+      <p>Password Safety</p>
+    </div>
+    </a>
+    <p class="txt-content"> An important lock that protects your information from others. Learn more about passwords and you will be surprised at how easily your passwords can be cracked. </p>
+  </div>
+
+  <div class="module">
+    <a href="phishing.html" class="module">
+    <div class="module-icon">
+      <img src="https://prog-8.com/images/html/advanced/ruby.png" />
+      <p>WiFi Security</p>
+    </div>
+    </a>
+    <p class="text-content"> How often do you connect to a wifi outside your home and workplace? Learn more about wifi and prepare to find out the "shady" ones that tries to steal your information!
+  </div>
+</div>
+        
+<div class="container">
+  <div class="personas">
+    <div class="personas-icon">
+    <a href="persona.html">
+  <img src="https://i.postimg.cc/nz03v6xw/student1.png" alt="Aki student illustration" style="max-width: 250px; border-radius: 12px;" /></a>
+      <p>Follow along the university life of Aki</p>
+</a>
+<a href="persona.html">
+  <img src="https://i.postimg.cc/FsZ01j9D/7075.png" alt="Aki student illustration" style="max-width: 150px; border-radius: 12px;" /></a>
+      <p>Follow along the university life of Ken</p>
+</a>
+    
+  </div>
+  
+</div>
+      <h2> Check your knowledge! Compare your score before and after you have completed the modules</h2>
+
+      <section>
+      <h2 class="fill">Fill in the Blanks</h2>
+
+<p class="fill">
+  A strong password should be at least 
+  <input type="text" id="blank1" placeholder="__" /> characters long,
+  contain a mix of 
+  <input type="text" id="blank2" placeholder="__" /> and 
+  <input type="text" id="blank3" placeholder="__" />,
+  and should avoid using 
+  <input type="text" id="blank4" placeholder="__" /> like "123456".
+</p>
+<p class="fill">
+  You should avoid connecting to Wi-Fi networks without a 
+  <input type="text" id="wifi1" placeholder="__" /> key, 
+  especially in public places like 
+  <input type="text" id="wifi2" placeholder="__" /> or cafes.
+</p>
+<p class="fill">
+  Using a 
+  <input type="text" id="pw1" placeholder="__" /> manager helps generate 
+  <input type="text" id="pw2" placeholder="__" /> and unique passwords for every site.
+</p>
+<p class="fill">
+  Be cautious of emails that urge you to click quickly, often using words like 
+  <input type="text" id="phish1" placeholder="__" /> or 
+  <input type="text" id="phish2" placeholder="__" />.
+</p>
+<p class="fill">
+  Avoid using your 
+  <input type="text" id="pw3" placeholder="__" /> or 
+  <input type="text" id="pw4" placeholder="__" /> in a password — these are easy to guess.
+</p>
+        <p class="fill">
+  Before clicking a link, always 
+  <input type="text" id="phish3" placeholder="__" /> over it to see where it leads — phishing links often imitate 
+  <input type="text" id="phish4" placeholder="__" /> websites.
+</p>
+
+
+
+
+
+
+<button onclick="checkBlanks()">Submit</button>
+
+<div id="feedback" style="margin-top: 20px;"></div>
+
+<script>
+  function checkBlanks() {
+    const answers = {
+      blank1: ["12", "twelve"],
+      blank2: ["letters", "characters"],
+      blank3: ["numbers", "digits"],
+      blank4: ["common passwords", "easy passwords", "weak passwords"],
+      wifi1: ["password", "security", "encryption"],
+      wifi2:["stations", "airports", "train stations", "libraries", "public spaces"],
+      pw1:["password"],
+      pw2:["strong", "secure", "safe"],
+      phish1:["urgent", "now", "immediately"],
+      phish2: ["suspend", "account", "warning"],
+      pw3:["name", "birthday", "username"],
+      pw4:["birthday", "phone", "student id", "address"],
+      phish3:["hover", "mouse", "place", "pause"],
+      phish4:["official", "legitimate", "real", "bank"]
+      
+      };
+
+    const feedback = [];
+
+    for (let key in answers) {
+      const userInput = document.getElementById(key).value.trim().toLowerCase();
+      const isCorrect = answers[key].some(valid => userInput === valid);
+
+      if (isCorrect) {
+        feedback.push(`<p style="color: green;">✅ ${key}: Correct!</p>`);
+      } else if (userInput === "") {
+        feedback.push(`<p style="color: orange;">⚠️ ${key}: No answer entered.</p>`);
+      } else {
+        feedback.push(`<p style="color: red;">❌ ${key}: "${userInput}" is not quite right.</p>`);
+      }
+    }
+
+    document.getElementById("feedback").innerHTML = feedback.join("");
+  }
+</script>
+      </section>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
